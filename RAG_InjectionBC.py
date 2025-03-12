@@ -56,3 +56,16 @@ results = execute_query(generated_sql)
 print("Query Results:", results)
 
 conn.close()
+
+
+""" TD;LR - In the function generate_sql_from_text, we simulate the process where an LLM or index might convert natural language input into SQL queries.
+However, we directly interpolate user input into the SQL query string without sanitizing it.
+
+Hacker payload: "age = 39 OR 1=1 --" is a typical SQL injection payload. The original query might have been intended to find users whose age is 30, but because of the injected payload, 
+the query becomes:
+
+SELECT * FROM users WHERE age = 39 OR 1=1 --"
+
+
+THE OR 1=1 condition is always true, and - turns the rest of the query into a comment. This causes the query to return all rows in the 'users' table, bypassing the intedend filter (age = 39)
+""" 
