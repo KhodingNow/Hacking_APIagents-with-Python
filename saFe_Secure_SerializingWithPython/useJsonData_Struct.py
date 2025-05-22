@@ -1,4 +1,5 @@
 # 1. Using Json Basic Data Structure
+
 import json
 
 data = {"task": "do_something", "param": 42}

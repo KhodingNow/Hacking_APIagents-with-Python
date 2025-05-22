@@ -1,8 +1,8 @@
 DETECTING POISONED Pickles
 
-If you have '.pkl or .pickle' files and you to analyze or detect malicious intent - you can;
-
-1 . Static Analysis of the Pickle File
+If you have '.pkl or .pickle' files and you need to analyze or detect malicious intent - you can;
+ 
+1  . Static Analysis of the Pickle File
 = use Python's built-in pickletools to disassemble the pickle bytecode:
 
 { bash
